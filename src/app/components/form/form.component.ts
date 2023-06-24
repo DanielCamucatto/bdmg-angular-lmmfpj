@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Address } from 'src/app/interface/address';
-import { ViaCepService } from 'src/app/services/viacep.service';
+import { Address } from '../../interface/address';
+import { ViaCepService } from '../../services/viacep.service';
 
 @Component({
   selector: 'app-form',
