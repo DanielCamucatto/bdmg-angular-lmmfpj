@@ -27,19 +27,28 @@
         border-radius: 50%;
         height: 100px;
         width: 100px;
+
+        @include phone-only {
+            display: none;
+        }
     }
 
     &__contact {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto; 
         gap: 10px; 
+
+        @include phone-only {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &__button {
         background-color: $color-var-2;
         color: $color-white;
-        border-radius: 10px;
+        border-radius: 5px;
         border: none;
         padding: 5px;
         width: 50%;
@@ -54,10 +63,40 @@
 }
 
 .span-1 {
+    grid-column: span 1;
+
+   
+}
+
+.span-2 {
     grid-column: span 2;
+
+  
+}
+
+.span-3 {
+    grid-column: span 3;
+
+  
+}
+
+.span-4 {
+    grid-column: span 4;
 }
 
 .mat-mdc-text-field-wrapper{
     background-color: transparent !important;
 }
 
+.confirmation-data{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+    @include phone-only {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

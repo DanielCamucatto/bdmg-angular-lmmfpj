@@ -10,13 +10,16 @@ import { FormPageComponent } from './pages/form-page/form-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PopupComponent } from './components/popup/popup.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     FormPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatInputModule,
     ReactiveFormsModule, 
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
