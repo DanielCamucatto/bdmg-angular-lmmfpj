@@ -1,0 +1,63 @@
+.form-component-wrapper {
+    border: solid 1px $color-var-1;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 5px rgba($color-black, .5);
+    padding: 2rem;
+    position: relative;
+
+    &__title {
+        color: darken($color-var-2, 15%);
+    }
+
+    &__subtitle {
+        font-size: 1rem ;
+        margin-bottom: 2rem;
+        color: lighten($color-black, 15%);
+    }
+
+    &__figure {
+        background: linear-gradient(45deg, $color-var-2, darken($color-var-2, 15%));
+        position: absolute;
+        top: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+    }
+
+    &__contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto; 
+        gap: 10px; 
+    }
+
+    &__button {
+        background-color: $color-var-2;
+        color: $color-white;
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+        width: 50%;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($color-var-2, 15%);
+        }
+    }
+
+}
+
+.span-1 {
+    grid-column: span 2;
+}
+
+.mat-mdc-text-field-wrapper{
+    background-color: transparent !important;
+}
+

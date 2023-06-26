@@ -6,7 +6,6 @@ import { ViaCepService } from '../../services/viacep.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
   providers: [ViaCepService]
 })
 export class FormComponent implements OnInit {
@@ -15,7 +14,8 @@ export class FormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private viaCepService: ViaCepService) {
     this.enderecoForm = this.formBuilder.group({
-      cep: ['', Validators.required],
+      nome: [''],
+      cep: [''],
       logradouro: [''],
       complemento: [''],
       bairro: [''],
@@ -23,8 +23,10 @@ export class FormComponent implements OnInit {
       uf: [''],
       ddd: [''],
       gia: [''],
+      telefone: ['']
     });
     this.endereco = {
+      nome: '',
       cep: '',
       logradouro: '',
       complemento: '',
@@ -34,7 +36,8 @@ export class FormComponent implements OnInit {
       ddd: '',
       gia: '',
       ibge: '',
-      siafi: ''
+      siafi: '',
+      telefone: ''
     };
   }
 
@@ -48,17 +51,15 @@ export class FormComponent implements OnInit {
 
   salvarEndereco() {
     if (this.enderecoForm.valid) {
-      const cepControl = this.enderecoForm.get('cep');
-      if (cepControl) {
-        const cep = cepControl.value;
-        this.viaCepService.getEndereco(cep).subscribe(data => {
-          this.endereco = data as Address;
-          localStorage.setItem('endereco', JSON.stringify(this.endereco));
-          console.log(this.endereco);
-          this.enderecoForm.reset();
-          
-        });
-      }
+      const cep = this.enderecoForm.value.cep;
+      this.viaCepService.getEndereco(cep).subscribe(data => {
+        this.endereco = data as Address;
+        this.endereco.nome = this.enderecoForm.value.nome;
+        this.endereco.telefone = this.enderecoForm.value.telefone;
+        localStorage.setItem('endereco', JSON.stringify(this.endereco));
+        console.log(this.endereco);
+        this.enderecoForm.reset();
+      });
     }
   }
 }

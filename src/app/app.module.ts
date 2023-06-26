@@ -9,12 +9,14 @@ import { MatInputModule } from '@angular/material/input';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    FormPageComponent
+    FormPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 export interface Address {
+    nome: string;
     cep: string;
     logradouro: string;
     complemento: string;
@@ -8,6 +9,7 @@ export interface Address {
     ibge: string;
     gia: string;
     ddd: string;
+    telefone: string;
     siafi: string;
   }
   

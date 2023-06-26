@@ -1,0 +1,178 @@
+.header {
+  background-color: $color-white;
+  padding: 10px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 150px;
+}
+
+.logotipo {
+  max-width: 100%;
+  height: auto;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  @include phone-only{
+    display: none;
+  }
+
+  .user-foto {
+    margin-right: 10px;
+  }
+
+  .foto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  .bdmg-digital {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #383838;
+
+    @include phone-only{
+      display: none;
+    }
+  }
+
+  .icone {
+    color: #2b2b2b;
+    font-size: 14px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.bdmg-cult {
+  margin-right: 20px;
+
+  @include phone-only{
+    display: none;
+  }
+
+  .link {
+    font-size: 14px;
+    color: #383838;
+  }
+}
+
+.menu-mobile {
+  cursor: pointer;
+  margin-left: 10px;
+
+  @include tablet-landscape {
+    display: none;
+  }
+
+}
+
+.menu-hamburger {
+  width: 24px;
+  height: 24px;
+}
+
+.bdmg-en-mobile {
+  margin-left: 10px;
+  padding: 0 10px;
+  border-left: 1px solid #d2d2d2;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: #383838;
+    font-size: 14px;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+}
+
+.bdmg-en {
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: 1px solid #d2d2d2;
+
+  .eua-flag {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #383838;
+
+    a {
+      display: flex;
+      align-items: center;
+      color: #383838;
+      text-decoration: none;
+
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.bdmg-digital-expand {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: none;
+
+  .bdmg-digital-desk {
+    display: flex;
+    align-items: center;
+  }
+
+  .bdmg-digital-mobile {
+    margin-top: 10px;
+  }
+}
+
+.bdmg-digital-expand.show {
+  display: block;
+}
+
+.itens-menu {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    margin-bottom: 10px;
+
+    a {
+      font-size: 14px;
+      color: #383838;
+      text-decoration: none;
+    }
+  }
+}
